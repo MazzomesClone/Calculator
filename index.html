@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="calcContainer">
+        <div class="displayContainer">
+            <div class="operatorDisplay">
+                <h4 id="operatorDisplay"></h4>
+            </div>
+            <div class="outputs">
+                <h4 id="secondaryDisplay"></h4>
+                <h2 id="primaryDisplay"></h2>
+            </div>
+        </div>
+        <div class="gridContainer">
+            <button class="small" onclick="calc.clear()">c</button>
+            <button class="small"></button>
+            <button class="small" onclick="calc.backspace()">del</button>
+            <button class="small secondaryColor" onclick="calc.inputOperator('÷')">÷</button>
+            <button class="small" onclick="calc.inputNumber('1')">1</button>
+            <button class="small" onclick="calc.inputNumber('2')">2</button>
+            <button class="small" onclick="calc.inputNumber('3')">3</button>
+            <button class="small secondaryColor" onclick="calc.inputOperator('x')">x</button>
+            <button class="small" onclick="calc.inputNumber('4')">4</button>
+            <button class="small" onclick="calc.inputNumber('5')">5</button>
+            <button class="small" onclick="calc.inputNumber('6')">6</button>
+            <button class="small secondaryColor" onclick="calc.inputOperator('-')">-</button>
+            <button class="small" onclick="calc.inputNumber('7')">7</button>
+            <button class="small" onclick="calc.inputNumber('8')">8</button>
+            <button class="small" onclick="calc.inputNumber('9')">9</button>
+            <button class="small secondaryColor" onclick="calc.inputOperator('+')">+</button>
+            <button class="span2" onclick="calc.inputNumber('0')">0</button>
+            <button class="small secondaryColor" onclick="calc.inputNumber('.')">.</button>
+            <button class="small secondaryColor" onclick="calc.equals()">=</button>
+        </div>
+    </div>
+</body>
+
+<script src="calculator.js"></script>
+
+<script>
+
+    const primaryDisplay = document.getElementById('primaryDisplay')
+    const secondaryDisplay = document.getElementById('secondaryDisplay')
+    const operatorDisplay = document.getElementById('operatorDisplay')
+
+    const calc = new Calculator(primaryDisplay, secondaryDisplay, operatorDisplay)
+    calc.render()
+
+</script>
+
+</html>
